@@ -1,0 +1,17 @@
+## 1. docker-compose up -d (Gera um container com uma database para testes locais) 
+## 2. npm run migrate:local (Para fazer o load das migrations no banco de testes local) 
+## 3. Acessar o banco de dados em  DATABASE_URL="postgresql://teste:teste@localhost/testedb?schema=public"
+
+version: "3"
+
+services: 
+  database:
+    image: postgres:alpine
+    container_name: detabase-question-answers-api
+    restart: always
+    ports:
+      - 5432:5432
+    environment: 
+      - POSTGRES_USER=teste
+      - POSTGRES_PASSWORD=teste
+      - POSTGRES_DB=testedb
