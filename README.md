@@ -2,24 +2,23 @@
 
 ## Description
 
-Este é um repositório de uma API Rest básica feita com NestJS e Prisma, utilizando um banco de dados PostgreSQL. O intuito dessa aplicação era implementar
-uma documentação completa no Swagger, seguindo um padrão de tratamento de erros [RFC 7807](https://datatracker.ietf.org/doc/html/rfc7807). 
+This is a repository of a basic Rest API built with NestJS and Prisma, using a PostgreSQL database. The purpose of this application was to implement comprehensive Swagger documentation, following an error handling standard [RFC 7807](https://datatracker.ietf.org/doc/html/rfc7807). The API essentially allows creating questions and answers.
 
 ## Installation
 
 <p>
-Você deve ter instalado no seu computador o Docker e o Nest/CLI. Atente-se ainda em 
-em criar os arquivos .env e docker-compose.yml na sua pasta do projeto.
+You must have Docker and Nest/CLI installed on your computer. Also, make sure to 
+create the .env and docker-compose.yml files in your project folder.
 </p>
 
 ```bash
-# Instalando as dependencias do projeto
+# Installing project dependencies
 $ npm install
 
-# Criando um container para o banco de dados postgresql
+# Creating a container for the PostgreSQL database
 $ docker compose up -d
 
-# Aplicando as migrations no banco
+# Applying migrations to the database
 $ npx prisma migrate deploy
 ```
 
