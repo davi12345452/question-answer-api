@@ -26,8 +26,8 @@ model Answer {
   id              String       @unique @default(uuid())
   name            String       @default("Anonymous")
   content         String
-  question_id     String      @unique
-  Question        Question    @relation(fields: [question_id], references: [id])
+  question_id     String       @unique
+  Question        Question     @relation(fields: [question_id], references: [id])
 
   @@map("answer")
 }
