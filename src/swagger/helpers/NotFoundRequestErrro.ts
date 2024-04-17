@@ -1,25 +1,34 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class NotFoundRequestSwagger {
-  @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Title of the error occurred.',
+    example: 'Not Found Exception occurred.',
+  })
   title: string;
 
-  @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Details about the error occurred.',
+    example: 'Some error occurred.',
+  })
   detail: string;
 
-  @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Type of error that can be referenced in another document.',
+    example: 'ANSWER-ERROR-01',
+  })
   type: string;
 
-  @IsOptional()
-  @ApiProperty({ default: 404 })
+  @ApiProperty({
+    default: 404,
+    description: 'Status code of the response.',
+  })
   status: number;
 
-  @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Endpoint where the error occurred.',
+    example: 'api/answer/:id',
+  })
   instance: string;
 
   constructor(title: string, detail: string, type: string, instance: string) {

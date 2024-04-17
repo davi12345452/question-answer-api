@@ -1,19 +1,34 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UnauthorizedRequestSwagger {
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Title of the error occurred.',
+    example: 'Unauthorized Exception occurred.',
+  })
   title: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Details about the error occurred.',
+    example: 'Some error occurred.',
+  })
   detail: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Type of error that can be referenced in another document.',
+    example: 'ANSWER-ERROR-01',
+  })
   type: string;
 
-  @ApiProperty({ default: 401 })
+  @ApiProperty({
+    default: 401,
+    description: 'Status code of the response.',
+  })
   status: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Endpoint where the error occurred.',
+    example: 'api/answer/:id',
+  })
   instance: string;
 
   constructor(title: string, detail: string, type: string, instance: string) {
