@@ -7,10 +7,12 @@ async function bootstrap() {
 
   // Configurando o Swagger na aplicação
   const config = new DocumentBuilder()
-    .setTitle('API Estudos')
-    .setDescription('API de Estudos em Nest')
+    .setTitle('Answers and Questions API')
+    .setDescription(
+      'API for creating questions that can be answered. Cretade by Davi -> github.com/davi12345452',
+    )
     .setVersion('1.0')
-    .addTag('API do Davi')
+    .addTag('API Answers & Questions')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('documentation-api', app, document);

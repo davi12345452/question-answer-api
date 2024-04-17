@@ -17,6 +17,7 @@ model Question {
   id         String       @unique @default(uuid())
   name       String       @default("Anonymous")
   content    String
+  created_at DateTime     @default(now())
   Answers    Answer[]
 
   @@map("question")
@@ -28,6 +29,7 @@ model Answer {
   content         String
   question_id     String       @unique
   Question        Question     @relation(fields: [question_id], references: [id])
+  created_at      DateTime     @default(now())
 
   @@map("answer")
 }
