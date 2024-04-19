@@ -13,7 +13,6 @@ create the .env and docker-compose.yml files in your project folder.
 
 ```bash
 # Clone the repository
-
 $ git clone https://github.com/davi12345452/question-answer-api.git
 
 # Installing project dependencies
